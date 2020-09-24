@@ -156,4 +156,11 @@ module.exports = {
   setPushNotificationsRegistrationId(registrationId: string) {
     AppEventsLogger.setPushNotificationsRegistrationId(registrationId);
   },
+
+  /**
+   * enables and disables event tracking
+   */
+  setAutoLogAppEventsEnabled(flag: boolean) {
+    AppEventsLogger.setAutoLogAppEventsEnabled(flag);
+  },
 };

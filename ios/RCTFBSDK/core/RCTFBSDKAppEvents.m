@@ -119,6 +119,11 @@ RCT_EXPORT_METHOD(setPushNotificationsDeviceToken:(NSString *)deviceToken)
   [FBSDKAppEvents setPushNotificationsDeviceToken:[RCTConvert NSData:deviceToken]];
 }
 
+RCT_EXPORT_METHOD(setAutoLogAppEventsEnabled:(BOOL)flag)
+{
+  [FBSDKSettings autoLogAppEventsEnabled:flag]
+}
+
 static NSDictionary<NSString *, id> *RCTDictionaryWithoutNullValues(NSDictionary<NSString *, id> *input)
 {
   if (input == nil) {

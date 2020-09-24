@@ -30,6 +30,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.module.annotations.ReactModule;
+import com.facebook.FacebookSdk;
 
 import java.math.BigDecimal;
 import java.util.Currency;
@@ -110,6 +111,7 @@ public class FBAppEventsLoggerModule extends ReactContextBaseJavaModule {
 
     private AppEventsLogger mAppEventLogger;
     private ReactApplicationContext mReactContext;
+    private FacebookSdk mFacebookSdk;
 
     public FBAppEventsLoggerModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -268,5 +270,13 @@ public class FBAppEventsLoggerModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setPushNotificationsRegistrationId(String registrationId) {
         AppEventsLogger.setPushNotificationsRegistrationId(registrationId);
+    }
+
+    /**
+     * disables and enables automatic event tracking
+     */
+    @ReactMethod
+    public void setAutoLogAppEventsEnabled(boolean flag) {
+        mFacebookSdk.setAutoLogAppEventsEnabled(flag);
     }
 }
