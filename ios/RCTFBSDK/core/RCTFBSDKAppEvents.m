@@ -121,7 +121,7 @@ RCT_EXPORT_METHOD(setPushNotificationsDeviceToken:(NSString *)deviceToken)
 
 RCT_EXPORT_METHOD(setAutoLogAppEventsEnabled:(BOOL)flag)
 {
-  [FBSDKSettings autoLogAppEventsEnabled:flag]
+  [FBSDKSettings setAutoLogAppEventsEnabled:flag];
 }
 
 static NSDictionary<NSString *, id> *RCTDictionaryWithoutNullValues(NSDictionary<NSString *, id> *input)
