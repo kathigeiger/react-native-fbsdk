@@ -163,4 +163,19 @@ module.exports = {
   setAutoLogAppEventsEnabled(flag: boolean) {
     AppEventsLogger.setAutoLogAppEventsEnabled(flag);
   },
+
+  /**
+   * enables and disables auto init
+   * @param flag
+   */
+  setAutoInitEnabled(flag: boolean) {
+    AppEventsLogger.setAutoInitEnabled(flag);
+  },
+
+  /**
+   * fully initializes the SDK (with no launch options)
+   */
+  fullyInitialize() {
+    AppEventsLogger.fullyInitialize();
+  },
 };

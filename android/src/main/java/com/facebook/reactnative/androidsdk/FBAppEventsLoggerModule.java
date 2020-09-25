@@ -279,4 +279,20 @@ public class FBAppEventsLoggerModule extends ReactContextBaseJavaModule {
     public void setAutoLogAppEventsEnabled(boolean flag) {
         mFacebookSdk.setAutoLogAppEventsEnabled(flag);
     }
+
+    /**
+     * disables and enables auto initialize
+     */
+     @ReactMethod
+     public void setAutoInitEnabled(boolean flag) {
+        mFacebookSdk.setAutoInitEnabled(flag);
+     }
+
+     /**
+      * fully initializes SDK
+      */
+      @ReactMethod
+      public void fullyInitialize() {
+        mFacebookSdk.fullyInitialize();
+      }
 }

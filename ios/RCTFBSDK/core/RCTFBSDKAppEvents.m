@@ -124,6 +124,16 @@ RCT_EXPORT_METHOD(setAutoLogAppEventsEnabled:(BOOL)flag)
   [FBSDKSettings setAutoLogAppEventsEnabled:flag];
 }
 
+RCT_EXPORT_METHOD(setAutoInitEnabled:(BOOL)flag)
+{
+  [FBSDKSettings setAutoInitEnabled:flag];
+}
+
+RCT_EXPORT_METHOD(fullyInitialize)
+{
+  [FBSDKApplicationDelegate initializeSDK:nil];
+}
+
 static NSDictionary<NSString *, id> *RCTDictionaryWithoutNullValues(NSDictionary<NSString *, id> *input)
 {
   if (input == nil) {
